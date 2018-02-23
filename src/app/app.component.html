@@ -1,3 +1,33 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+
+  <h2>Reports</h2>
+  <div class="panel panel-default">
+    <div class="panel-heading">Users</div>
+    <div class="panel-body">
+      Total Number of Users: {{numOfUsers}}
+      <br> Suspended Users: {{suspendedUsers}}
+      <br> Active Users: {{activeUsers}}
+    </div>
+  </div>
+
+
+  <div class="panel panel-default">
+    <div class="panel-heading">Gmail Usage in GB</div>
+    <div class="panel-body">
+      <div *ngFor="let item of usersUsage">
+        {{item.firstName | uppercase}} {{item.lastName | uppercase}} : {{item.gmailUsage/1000}}
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+      <div class="panel-heading">Drive Usage in GB</div>
+      <div class="panel-body">
+        <div *ngFor="let item of usersUsage">
+          {{item.firstName | uppercase}} {{item.lastName | uppercase}} : {{item.driveUsage/1000}}
+        </div>
+      </div>
+    </div>
+  
+
+</div>
